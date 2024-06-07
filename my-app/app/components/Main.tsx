@@ -1,6 +1,4 @@
 'use client'
-
-
 import {MouseEvent, useCallback, useState} from "react";
 import { ItemData} from "@/app/interfaces/Item";
 import {Item} from "@/app/components/Item";
@@ -10,12 +8,11 @@ export const Main = () => {
     const [count, setCount] = useState(0);
 
     const updateData = () => {
-        const newData = Array.from({ length: 200} ).map((item, idx) => ({
-            name:  `name ${idx}`,
-            id: idx,
-        }))
-
         if (!data) {
+            const newData = Array.from({ length: 200} ).map((item, idx) => ({
+                name:  `name ${idx}`,
+                id: idx,
+            }))
             setData(newData);
         }
 
